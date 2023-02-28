@@ -1,0 +1,57 @@
+@import "../../sass/colors";
+@import "../../sass/vars";
+@import "../../sass/mixins";
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background: transparent;
+    @include breakpointFrom(tablet){
+        background: rgba(0, 0, 0, 0.2);
+     }
+
+}
+.menuContainer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 4;
+
+    background-color: var(--orange-color);
+    box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
+
+    @include breakpointFrom(mobile){
+       width: 280px;
+    }
+}
+
+
+.menuHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px 20px 20px;
+    @include breakpointFrom(tablet){
+        padding: 15px 20px 40px 20px;
+    }
+}
+
+.button{
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
+}
+.crossIcon{
+    color: var(--secondary-bcg-color);
+    transition: makeTransition(transform);
+    &:hover,
+    &:focus{
+        transform: scale(1.15);
+    }
+}

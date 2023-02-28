@@ -1,0 +1,52 @@
+@import "../../sass/colors";
+@import "../../sass/vars";
+@import "../../sass/mixins";
+
+.list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    
+    font-weight: 500;
+    @include breakpointFrom(desktop){
+        flex-direction: row;
+        margin-left: auto;
+        padding-top: 0;
+        padding-right: 40px;
+    }
+}
+
+.item{
+    padding: 15px 20px ;
+    text-align: start;
+    border-top: 1px solid var(--secondary-bcg-color);
+
+    &:last-child{
+        border-bottom: 1px solid var(--secondary-bcg-color);
+        @include breakpointFrom(desktop){
+            border-bottom: none;
+            border-right: none;
+        }
+    }
+    @include breakpointFrom(desktop){
+        padding: 0px 16px;
+        border-top: none;
+        border-right: 1px solid var(--color-link);
+    }
+}
+.link{
+    text-decoration: none;
+    color: var(--secondary-bcg-color);
+    transition: makeTransition(color);
+    font-size: 12px;
+    &:hover{
+        color: var(--color-black);
+    }
+    @include breakpointFrom(desktop){
+        color: var(--color-link);
+    }
+
+    &:global(.active){
+        color: var(--color-black);
+    }
+}

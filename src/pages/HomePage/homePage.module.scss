@@ -1,0 +1,33 @@
+@import '../../sass/mixins';
+
+.wrapper {
+  background-color: var(--primary-bcg-color);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include breakpointFrom(tablet) {
+    overflow-y: auto;
+    // @media screen and (min-width: 768px) {
+    // padding: 0px 32px;
+    // width: 768px;
+  }
+
+  @include breakpointFrom(desktop) {
+    height: calc(100vh - 65px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.mainContainer {
+  height: calc(100vh - 64px);
+
+  @include breakpointFrom(desktop) {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

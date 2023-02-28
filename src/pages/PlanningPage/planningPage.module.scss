@@ -1,0 +1,137 @@
+@import '../../sass/mixins';
+
+// .container {
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   @media screen and (min-width: 320px) {
+//     width: 320px;
+//     padding: 0px 20px;
+//   }
+
+//   @media screen and (min-width: 768px) {
+//     width: 768px;
+//     padding: 0px 32px;
+//     height: calc(100vh - 65px);
+//     overflow-y: auto;
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     width: 1280px;
+//     padding: 0px 16px;
+//   }
+// }
+
+.superWrapper {
+
+  @include breakpointFrom(tablet) {
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+  }
+}
+
+.wrapper {
+  margin: 40 auto;
+
+  @include breakpointFrom(tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+  }
+
+  @include breakpointFrom(desktop) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpointFrom(tablet) {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  @include breakpointFrom(desktop) {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+.title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1/22;
+  letter-spacing: 0.04em;
+  color: var(--color-black);
+  margin-top: 20px;
+  text-align: center;
+
+  @include breakpointFrom(tablet) {
+    margin-top: 0;
+  }
+
+  @include breakpointFrom(desktop) {
+    margin-top: 0;
+  }
+}
+
+.week {
+  display: inline-block;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  padding: 7px 15px;
+  border: 1px solid var(--orange-color);
+  border-radius: 6px;
+
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.2em;
+
+  color: var(--color-black);
+
+  @include breakpointFrom(tablet) {
+    margin: 0 0 0 10px;
+  }
+
+  @include breakpointFrom(desktop) {
+    margin: 0 0 0 10px;
+    border: none;
+    padding: 0;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  // padding-bottom: 64px;
+
+  @include breakpointFrom(tablet) {
+    // padding-bottom: 32px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+
+  @include breakpointFrom(desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
